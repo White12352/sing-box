@@ -59,6 +59,7 @@ jobs:
           rm -f .github/psa.yml
           rm -rf spa
           cp -r sing-box/* .
+          cp -r sing-box/.github .
           rm -rf sing-box
           git add .
           git commit -m "commit"
