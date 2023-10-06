@@ -75,6 +75,8 @@ jobs:
           cp -r sing-box/.github .
           rm -rf sing-box
           go mod tidy
+          cd test
+          go mod tidy
           git add .
           git commit -m "commit"
           git push --force origin sing-box
