@@ -47,7 +47,7 @@ jobs:
           mv -f spa/.github/outbound/* sing-box/outbound/
           mv -f spa/.github/test/* sing-box/test/
           mv -f spa/.github/transport/* sing-box/transport/
-          mv -f sa/.github/common/sniff/* sing-box/common/sniff/
+          mv -f spa/.github/common/sniff/* sing-box/common/sniff/
 
       - name: Commit and Push Changes
         env:
