@@ -75,7 +75,9 @@ jobs:
           cp -r sing-box/.github .
           rm -rf sing-box
           go mod tidy
-          cd test
+          cd ..
+          git clone -b dev https://github.com/SagerNet/sing-quic sing-quic
+          cd nias/test
           go mod tidy
           git add .
           git commit -m "commit"
