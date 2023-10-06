@@ -58,7 +58,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           git checkout -b sing-box
-          rm -f .github/psa.yml
+          rm -f .github
           rm -rf spa
           cp -r sing-box/* .
           cp -r sing-box/.github .
