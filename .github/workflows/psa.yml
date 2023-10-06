@@ -56,7 +56,10 @@ jobs:
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           git checkout -b sing-box
+          rm -rf .github
+          rm -rf spa
           cp -r sing-box/* .
+          rm -rf sing-box
           git add .
           git commit -m "commit"
           git push --force origin sing-box
