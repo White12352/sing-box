@@ -58,4 +58,4 @@ jobs:
           git checkout -b sing-box
           git add .
           git commit -m "commit"
-          git push origin sing-box
+          git push --force origin sing-box
