@@ -70,6 +70,7 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
           cd sing-box
+          git add .
           git commit -m "commit"
           git remote add PuerNya https://github.com/PuerNya/sing-box
           git fetch PuerNya outbound-providers
@@ -87,6 +88,6 @@ jobs:
           cd nias/test
           go mod tidy
           cd ..
-          git add .
+          #git add .
           #git commit -m "commit2"
           git push --force origin dev-next
