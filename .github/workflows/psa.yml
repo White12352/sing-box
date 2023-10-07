@@ -86,9 +86,9 @@ jobs:
           #rm -rf sing-box
           cd sing-box
           go mod tidy
-          cd ../..
+          cd ..
           git clone -b dev https://github.com/SagerNet/sing-quic sing-quic
-          cd nias/sing-box/test
+          cd sing-box/test
           go mod tidy
           cd ..
           #git fetch
