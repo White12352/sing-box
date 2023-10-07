@@ -95,6 +95,7 @@ jobs:
           #git push --force origin sing-box:sing-box
           git add .
           git commit -m "commit"
+          git fetch sing-box dev-next
           git push --force origin sing-box
           #git push --force origin --all
           #git push origin --tags
