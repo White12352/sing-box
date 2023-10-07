@@ -96,8 +96,8 @@ jobs:
           #git push --force origin sing-box:sing-box
           git add .
           git commit -m "commit"
-          git remote add sing-box https://github.com/SagerNet/sing-box
-          git fetch sing-box dev-next
+          #git remote add sing-box https://github.com/SagerNet/sing-box
+          #git fetch sing-box dev-next
           git push --force origin sing-box
           #git push --force origin --all
           #git push origin --tags
