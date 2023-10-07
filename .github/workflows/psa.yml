@@ -93,6 +93,7 @@ jobs:
           #git push --force origin sing-box:sing-box
           git add .
           git commit -m "commit"
-          git push --force origin sing-box
+          git remote add new_origin https://github.com/White12352/nias.git
+          git push --force new_origin sing-box
           #git push --force origin --all
           #git push origin --tags
