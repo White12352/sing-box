@@ -19,6 +19,7 @@ jobs:
           git clone -b dev-11 https://github.com/White12352/spa spa
           mv -f spa/.github/proxyproto/ sing-box/common/
           cd sing-box
+          git fetch
           sed -i '0,/github.com\/oschwald\/maxminddb-golang v[0-9]\+\.[0-9]\+\.[0-9]\+/s//&\n\tgithub.com\/pires\/go-proxyproto v0.7.0/' go.mod
           sed -i '0,/N "github.com\/sagernet\/sing\/common\/network"/s//&\n\n\t"github.com\/pires\/go-proxyproto"/' outbound/direct.go
           sed -i '0,/overrideDestination M.Socksaddr/s//&\n\tproxyProto          uint8/' outbound/direct.go
@@ -80,8 +81,8 @@ jobs:
           cd nias/test
           go mod tidy
           cd ..
-          git add .
+          #git add .
           #git commit -m "commit"
-          #git push --force origin sing-box --all
-          git push --force origin --all
-          git push origin --tags
+          git push --force origin sing-box
+          #git push --force origin --all
+          #git push origin --tags
