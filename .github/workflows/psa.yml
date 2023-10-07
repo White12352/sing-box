@@ -25,6 +25,7 @@ jobs:
           git remote -v
           #git remote add new_origin https://github.com/White12352/nias.git
           git remote add new_origin https://github.com/White12352/nias.git
+          git remote -v
           git checkout -b sing-box
           #rm -rf .github
           #rm -rf spa
