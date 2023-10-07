@@ -17,8 +17,17 @@ jobs:
         run: |
           git clone -b dev-next https://github.com/SagerNet/sing-box sing-box
           git clone -b dev-11 https://github.com/White12352/spa spa
+          cd sing-box
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git remote add sing-box https://github.com/SagerNet/sing-box
+          git checkout dev-next
+          git fetch sing-box dev-next
+          cd ..
           mv -f spa/.github/proxyproto/ sing-box/common/
           cd sing-box
+          #git remote -v
+          #git remote add new_origin https://github.com/White12352/nias.git
           sed -i '0,/github.com\/oschwald\/maxminddb-golang v[0-9]\+\.[0-9]\+\.[0-9]\+/s//&\n\tgithub.com\/pires\/go-proxyproto v0.7.0/' go.mod
           sed -i '0,/N "github.com\/sagernet\/sing\/common\/network"/s//&\n\n\t"github.com\/pires\/go-proxyproto"/' outbound/direct.go
           sed -i '0,/overrideDestination M.Socksaddr/s//&\n\tproxyProto          uint8/' outbound/direct.go
@@ -65,8 +74,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config user.email "github-actions@github.com"
-          git config user.name "GitHub Actions"
+          #git config user.email "github-actions@github.com"
+          #git config user.name "GitHub Actions"
           git checkout -b sing-box
           rm -rf .github
           rm -rf spa
@@ -79,6 +88,11 @@ jobs:
           cd nias/test
           go mod tidy
           cd ..
-          git add .
-          git commit -m "commit"
-          git push --force origin sing-box
+          #git fetch
+          #git checkout -b dev-next
+          git push --force origin sing-box:sing-box
+          #git add .
+          #git commit -m "commit"
+          #git push --force origin sing-box
+          #git push --force origin --all
+          #git push origin --tags
