@@ -21,6 +21,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           git remote add sing-box https://github.com/SagerNet/sing-box
+          git checkout dev-next
           git fetch sing-box
           cd ..
           mv -f spa/.github/proxyproto/ sing-box/common/
