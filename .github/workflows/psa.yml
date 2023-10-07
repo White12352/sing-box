@@ -83,5 +83,6 @@ jobs:
           git add .
           git commit -m "commit"
           #git push --force origin sing-box --all
-          git push origin sing-box --all
-          git push origin sing-box --tags
+          cd sing-box
+          git push --force origin --all
+          git push origin --tags
