@@ -68,9 +68,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
           cd sing-box
-          git stash
-          git commit
-          git stash pop
+          git commit -m "commit"
           git remote add PuerNya https://github.com/PuerNya/sing-box
           git fetch PuerNya outbound-providers
           git cherry-pick -x -n $(git log PuerNya/outbound-providers --grep=Providers --format=format:"%H")
@@ -88,5 +86,5 @@ jobs:
           go mod tidy
           cd ..
           git add .
-          git commit -m "commit"
+          git commit -m "commit2"
           git push --force origin dev-next
