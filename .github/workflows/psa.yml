@@ -83,7 +83,7 @@ jobs:
           cd nias/test
           go mod tidy
           cd ..
-          #git add .
+          git add .
           #git commit -m "commit"
           git push --force origin sing-box
           #git push --force origin --all
