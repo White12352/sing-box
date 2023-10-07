@@ -22,9 +22,6 @@ jobs:
           #git config user.name "GitHub Actions"
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          #git remote add sing-box https://github.com/SagerNet/sing-box
-          #git checkout dev-next
-          #git fetch sing-box dev-next
           cd ..
           mv -f spa/.github/proxyproto/ sing-box/common/
           cd sing-box
@@ -96,8 +93,6 @@ jobs:
           #git push --force origin sing-box:sing-box
           git add .
           git commit -m "commit"
-          #git remote add sing-box https://github.com/SagerNet/sing-box
-          #git fetch sing-box dev-next
           git push --force origin sing-box
           #git push --force origin --all
           #git push origin --tags
