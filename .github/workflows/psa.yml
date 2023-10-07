@@ -82,12 +82,12 @@ jobs:
           cp -r sing-box/* .
           cp -r sing-box/.github .
           rm -rf sing-box
-          go mod tidy
           cd ..
           git clone -b dev https://github.com/SagerNet/sing-quic sing-quic
           cd nias/test
           go mod tidy
           cd ..
+          go mod tidy
           git add .
           git commit -m "commit2"
           git push --force origin dev-next
