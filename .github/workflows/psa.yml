@@ -75,6 +75,7 @@ jobs:
         run: |
           #git config user.email "github-actions@github.com"
           #git config user.name "GitHub Actions"
+          git remote add new_origin https://github.com/White12352/nias
           git checkout -b sing-box
           #rm -rf .github
           #rm -rf spa
@@ -93,7 +94,6 @@ jobs:
           #git push --force origin sing-box:sing-box
           git add .
           git commit -m "commit"
-          git remote add new_origin https://github.com/White12352/nias
-          git push --force origin sing-box:sing-box
+          git push --force new_origin sing-box:sing-box
           #git push --force origin --all
           #git push origin --tags
