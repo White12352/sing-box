@@ -67,6 +67,11 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
+          cd sing-box
+          git remote add PuerNya https://github.com/PuerNya/sing-box
+          git fetch PuerNya outbound-providers
+          git cherry-pick -x -n $(git log PuerNya/outbound-providers --grep=Providers --format=format:"%H")
+          cd ..
           git checkout -b sing-box
           rm -rf .github
           rm -rf spa
