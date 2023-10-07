@@ -88,6 +88,8 @@ jobs:
           cd nias/test
           go mod tidy
           cd ..
-          git add .
+          #git add .
+          #git commit -m "commit2"
+          #git push --force origin dev-next
           git commit -m "commit2"
-          git push --force origin dev-next
+          git push origin dev-next
