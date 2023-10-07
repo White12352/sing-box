@@ -15,7 +15,7 @@ jobs:
 
       - name: code
         run: |
-          git clone -b dev-next https://github.com/SagerNet/sing-box sing-box  --bare
+          git clone -b dev-next https://github.com/SagerNet/sing-box sing-box
           git clone -b dev-11 https://github.com/White12352/spa spa
           mv -f spa/.github/proxyproto/ sing-box/common/
           cd sing-box
