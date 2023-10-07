@@ -18,8 +18,10 @@ jobs:
           git clone -b dev-next https://github.com/SagerNet/sing-box sing-box
           git clone -b dev-11 https://github.com/White12352/spa spa
           cd sing-box
-          git config user.email "github-actions@github.com"
-          git config user.name "GitHub Actions"
+          #git config user.email "github-actions@github.com"
+          #git config user.name "GitHub Actions"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git remote add sing-box https://github.com/SagerNet/sing-box
           git checkout dev-next
           git fetch sing-box dev-next
@@ -90,9 +92,9 @@ jobs:
           cd ..
           #git fetch
           #git checkout -b dev-next
-          git push --force origin sing-box:sing-box
-          #git add .
-          #git commit -m "commit"
-          #git push --force origin sing-box
+          #git push --force origin sing-box:sing-box
+          git add .
+          git commit -m "commit"
+          git push --force origin sing-box
           #git push --force origin --all
           #git push origin --tags
