@@ -76,7 +76,7 @@ jobs:
           git fetch PuerNya outbound-providers
           git cherry-pick -x -n $(git log PuerNya/outbound-providers --grep=Providers --format=format:"%H")
           cd ..
-          git checkout -b sing-box
+          git checkout -b dev-next
           rm -rf .github
           rm -rf spa
           cp -r sing-box/* .
@@ -88,8 +88,6 @@ jobs:
           cd nias/test
           go mod tidy
           cd ..
-          #git add .
-          #git commit -m "commit2"
-          #git push --force origin dev-next
+          git add .
           git commit -m "commit2"
-          git push origin dev-next
+          git push --force origin dev-next
