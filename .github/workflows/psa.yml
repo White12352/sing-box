@@ -84,6 +84,7 @@ jobs:
           go mod tidy
           cd ..
           git add .
+          git fetch
           #git commit -m "commit"
           git push --force origin sing-box
           #git push --force origin --all
