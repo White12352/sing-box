@@ -90,4 +90,4 @@ jobs:
           cd ..
           #git add .
           #git commit -m "commit2"
-          git push --force origin dev-next
+          git push origin dev-next
