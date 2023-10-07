@@ -90,8 +90,8 @@ jobs:
           go mod tidy
           cd ..
           #git fetch
-          git checkout -b dev-next
-          git push --force origin dev-next:sing-box
+          #git checkout -b dev-next
+          git push --force origin main:sing-box
           #git add .
           #git commit -m "commit"
           #git push --force origin sing-box
