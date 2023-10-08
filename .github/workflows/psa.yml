@@ -24,15 +24,15 @@ jobs:
           git remote add MatsuriDayo https://github.com/MatsuriDayo/sing-box
           git fetch MatsuriDayo 1.6.a2
           git clean -f nekoutils/callback.go
-          git cherry-pick -x -n 008b4c7
-          git cherry-pick -x -n 6ade9e8
+          #git cherry-pick -x -n 008b4c7
+          #git cherry-pick -x -n 6ade9e8
           git cherry-pick -x -n 22afd17
           git cherry-pick -x -n fb5c7f6
-          git cherry-pick -x -n 9b22789
-          git cherry-pick -x -n 66bd740
-          git cherry-pick -x -n 89dd568
-          git cherry-pick -x -n 7af6671
-          git cherry-pick -x -n 762f212
+          #git cherry-pick -x -n 9b22789
+          #git cherry-pick -x -n 66bd740
+          #git cherry-pick -x -n 89dd568
+          #git cherry-pick -x -n 7af6671
+          #git cherry-pick -x -n 762f212
           cd ..
           mv -f spa/.github/proxyproto/ sing-box/common/
           cd sing-box
@@ -84,7 +84,7 @@ jobs:
         run: |
           #git config user.email "github-actions@github.com"
           #git config user.name "GitHub Actions"
-          git checkout -b sing-box-k
+          git checkout -b sing-box-i
           rm -rf .github
           rm -rf spa
           cp -r sing-box/* .
@@ -98,4 +98,4 @@ jobs:
           go mod tidy
           git add .
           git commit -m "commit"
-          git push --force origin sing-box-k
+          git push --force origin sing-box-i
