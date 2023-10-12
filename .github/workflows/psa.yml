@@ -67,7 +67,7 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          git checkout -b sing-box
+          git checkout -b dev-next
           rm -rf .github
           rm -rf spa
           cp -r sing-box/* .
@@ -81,4 +81,4 @@ jobs:
           go mod tidy
           git add .
           git commit -m "commit"
-          git push --force origin sing-box
+          git push --force origin dev-next
