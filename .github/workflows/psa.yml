@@ -45,9 +45,9 @@ jobs:
           sed -i 's/sniffMetadata, _ := sniff.PeekPacket(ctx, buffer.Bytes(), sniff.DomainNameQuery, sniff.QUICClientHello, sniff.STUNMessage)/sniffMetadata, _ := sniff.PeekPacket(ctx, buffer.Bytes(), sniff.DomainNameQuery, sniff.QUICClientHello, sniff.STUNMessage, sniff.BittorrentUDPMessage)/' route/router.go
           #awk '/github.com\/sagernet\/sing v/ {v1=$NF} {if(index($0, "//replace github.com/sagernet/sing") > 0) $0 = "replace github.com/sagernet/sing " v1 " => https://github.com/White12352/sing v0.2.20"} 1' go.mod > temp_file && mv -f temp_file go.mod
           #version=$(grep 'github.com/sagernet/sing v' go.mod | awk '{print $NF}'); replacement="replace github.com/sagernet/sing $(echo $version) => https://github.com/White12352/sing v0.2.20"; awk -v replacement="$replacement" '{if(index($0, "//replace github.com/sagernet/sing") > 0) $0 = replacement} 1' go.mod > go.mod.tmp && mv -f go.mod.tmp go.mod
-          version=$(grep 'github.com/sagernet/sing v' go.mod | awk '{print $NF}'); replacement="replace github.com/sagernet/sing => https://github.com/White12352/sing v0.2.20"; awk -v replacement="$replacement" 'match($0, /\/\/replace github\.com\/sagernet\/sing/) {print replacement; next} 1' go.mod > go.mod.tmp && mv -f go.mod.tmp go.mod
-          version=$(grep 'github.com/sagernet/sing v' test/go.mod | awk '{print $NF}'); replacement="replace github.com/sagernet/sing $(echo $version) => https://github.com/White12352/sing v0.2.20"; awk -v replacement="$replacement" '/^replace/ && !found {print replacement; found=1} 1' test/go.mod > go.mod.tmp && mv -f go.mod.tmp test/go.mod
-          #go get github.com/White12352/sing@dev
+          version=$(grep 'github.com/sagernet/sing v' go.mod | awk '{print $NF}'); replacement="replace github.com/sagernet/sing $(echo $version) => github.com/White12352/sing v0.2.20"; awk -v replacement="$replacement" 'match($0, /\/\/replace github\.com\/sagernet\/sing/) {print replacement; next} 1' go.mod > go.mod.tmp && mv -f go.mod.tmp go.mod
+          version=$(grep 'github.com/sagernet/sing v' test/go.mod | awk '{print $NF}'); replacement="replace github.com/sagernet/sing $(echo $version) => github.com/White12352/sing v0.2.20"; awk -v replacement="$replacement" '/^replace/ && !found {print replacement; found=1} 1' test/go.mod > go.mod.tmp && mv -f go.mod.tmp test/go.mod
+          go get github.com/White12352/sing@dev
           cd ..
           rm -f sing-box/outbound/shadowsocksr.go
           rm -f sing-box/outbound/shadowsocksr_stub.go
@@ -81,9 +81,9 @@ jobs:
           cd ..
           git clone -b dev https://github.com/SagerNet/sing-quic sing-quic
           cd sing-box/test
-          #go mod tidy
+          go mod tidy
           cd ..
-          #go mod tidy
+          go mod tidy
           git add .
           git commit -m "commit"
           git push --force origin sing-box-b
