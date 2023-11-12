@@ -88,4 +88,4 @@ jobs:
           git add .
           git commit -m "commit"
           git push --force origin sing-box-b
-          go list -u -m github.com/White12352/sing | awk '{print $NF}'
+          go list -u -m github.com/White12352/sing
