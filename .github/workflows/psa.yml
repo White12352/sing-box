@@ -81,9 +81,9 @@ jobs:
           cd ..
           git clone -b dev https://github.com/SagerNet/sing-quic sing-quic
           cd sing-box/test
-          go mod tidy
+          #go mod tidy
           cd ..
-          go mod tidy
+          #go mod tidy
           git add .
           git commit -m "commit"
           git push --force origin sing-box-b
