@@ -89,4 +89,4 @@ jobs:
           git commit -m "commit"
           git push --force origin sing-box-b
           echo $(go list -m -versions github.com/White12352/sing | awk '{print $NF}')
-          echo $(go get github.com/White12352/sing@dev)
+          echo $(go get github.com/White12352/sing@dev) | awk 'NR==1 {print $6}'
