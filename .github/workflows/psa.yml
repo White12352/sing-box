@@ -88,5 +88,4 @@ jobs:
           git add .
           git commit -m "commit"
           git push --force origin sing-box-b
-          go list -f '{{.Version}}' github.com/White12352/sing
-          #go list -m -versions github.com/White12352/sing
+          go list -m -versions github.com/White12352/sing
